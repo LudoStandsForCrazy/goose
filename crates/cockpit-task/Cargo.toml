@@ -1,0 +1,27 @@
+[package]
+name = "cockpit-task"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+goose = { path = "../goose" }
+goose-cli = { path = "../goose-cli" }
+tokio = { version = "1.0", features = ["full"] }
+async-nats = "0.33"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1.0", features = ["v4"] }
+futures = "0.3"
+tokio-util = "0.7"
+rmcp = { workspace = true }
+
+[[example]]
+name = "simple_client"
+path = "examples/simple_client.rs"
+
+[[example]]
+name = "structured_output_client" 
+path = "examples/structured_output_client.rs"
